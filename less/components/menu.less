@@ -1,0 +1,75 @@
+// out: false
+.menu {
+    z-index: 2;    
+    margin-left: 5.5%;    
+    position: absolute;    
+    top: calc(@headerHeight / 2);
+    left: 5.5%;    
+    width: 240px;
+
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 10px;
+
+    &__button {        
+        &_opened{
+            color: white;
+            background: radial-gradient(85.86% 686.84% at 50% -407.02%, @grColor2 17.67%, rgba(83, 182, 185, 0) 100%);
+            background-color: @grColor1;
+        }
+        transition: all 0.15s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        line-height: 1.1em;
+        padding: 20px 15px;
+        width: 100%;
+        border: 1px solid #EBEBEB;
+        border-radius: 15px;
+        font-size: 0.75rem;
+        .sign{
+            font-size: 1rem;
+        }    
+        gap: 15px; 
+        
+        *{
+            pointer-events: none;
+        }
+
+        &-arrow{
+            display: block;
+            width: 5px;
+            height: 20px;
+        }
+    }
+    
+        
+
+    &__list{        
+        overflow-y: hidden;   
+        max-height: 0px;
+        &-item:first-child{
+            margin-top: 10px;
+        }        
+        transition: all 0.3s ease-in-out;        
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;        
+        &_opened{
+            max-height: 1500px;            
+        }
+        &-item{
+            position: relative;
+        }
+    }    
+
+    &__section-list{
+        position: absolute;
+        top: 0;
+        left: calc(100% + 30px);
+        width: 100%;        
+        background-color: red;
+
+    }
+}

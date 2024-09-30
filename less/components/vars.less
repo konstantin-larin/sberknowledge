@@ -1,0 +1,43 @@
+// out: false
+html {
+    --padX: 20%;    
+
+    @media(max-width: (@mobileBreakpoint)) {
+        --padX: 1rem;
+    }
+    --mgY: 75px;
+    
+    --titleFs: 1.5rem;
+
+    @media(min-width: (@mobileBreakpoint + 1)){
+        --titleFs: 2rem;        
+    }
+    
+    @media(min-width: (@tabletBreakpoint + 1)){
+        --titleFs: 2.5rem;
+        --mgY: 115px;
+    }
+        
+    @media(min-width: (@desktopLgBreakpoint + 1)) {
+        --titleFs: 3rem;        
+        --mgY: 150px;
+        --padX: 15%;
+    }
+}
+
+//metrics
+@sectionMaxWidth: 1200px;
+@headerHeight: 240px;
+@internalMgY: calc(var(--mgY) / 2);
+
+//breakpoints
+@lgBreakpoint: 1920px;
+@desktopLgBreakpoint: 1440px;
+@desktopBreakpoint: 1100px;
+@tabletBreakpoint: 768px;
+@mobileBreakpoint: 480px;
+//colors 
+
+@mainColor: #333333;
+@grColor1: var(--gr-color-1);
+@grColor2: var(--gr-color-2);

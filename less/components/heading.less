@@ -1,0 +1,94 @@
+// out: false
+.heading {
+    &__nav {
+        margin-top: 50px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @media(max-width: @desktopBreakpoint) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+
+        &-link {
+            display: flex;
+            border-bottom: 1px solid #F2F2F2;
+            align-items: flex-start;
+            gap: 20px;
+            padding-top: 33px;
+            padding-right: 30px;
+            padding-bottom: 33px;
+            text-decoration: none !important;
+
+            &:hover {
+                * {
+                    fill: @grColor1;
+                    color: @grColor1;
+                }
+            }
+        }
+
+        &-section {
+            line-height: 1.1em;
+        }
+    }
+
+    &__contacts{
+        margin-top: @internalMgY;
+        border-radius: 20px;
+        padding: @internalMgY;
+        background-color: #F8F8F8;
+        display: grid;                
+        grid-template-columns: repeat(2, 1fr);
+        @media(max-width: @desktopBreakpoint){
+            grid-template-columns: repeat(1, 1fr);
+        }
+        gap: 50px;
+
+        &-block{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        &-title{
+            opacity: 0.5;
+            font-size: 0.75rem;
+        }
+
+        &-mail-link{            
+            display: flex;
+            gap: 15px;
+            font-weight: 700;
+            a:hover{
+                color: inherit;
+            }
+            *{
+                transition: all 0.15s;
+            }
+            &:hover{
+                color: @grColor1;
+                path{
+                    fill: @grColor1;
+                }
+            }
+        }        
+    }
+
+    &__author{
+        &-name{
+            font-weight: 700;
+        }
+        
+        .paragraph{                        
+            margin-top: 7px;
+        }
+    }
+
+    .paragraph{
+        padding: 0px;
+        font-size: 0.75rem;
+    }
+}

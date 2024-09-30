@@ -1,0 +1,15 @@
+// out: false
+.img-optimize-container(@height, @width){
+    position: relative;
+    display: block;
+    @aspect-ratio: (@height / @width) * 100%;
+    padding-bottom: @aspect-ratio  !important;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

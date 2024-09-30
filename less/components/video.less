@@ -1,0 +1,211 @@
+// out: false
+.video {
+    padding-top: var(--mgY);
+    padding-bottom: var(--mgY);
+    background: linear-gradient(90.5deg, #005796 0%, #53B6B9 95.22%), #53B6B9;
+    border-radius: 20px;
+    color: white;    
+
+    .subtitle {
+        margin-top: 0px;    
+        font-weight: 700;
+        background: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        background-clip: unset;
+        text-fill-color: unset;
+    }
+
+    &__block {
+        &:extend(.content-pad);
+        margin-top: var(--mgY);
+    }
+
+    &__person {
+        font-size: 1.5rem;
+
+        &-description {
+            line-height: 1.3em;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+    }
+
+    &__player {
+        .img-optimize-container(420, 720);
+        position: relative;
+        background: linear-gradient(90.5deg, var(--gr-color-3) 0%, var(--gr-color-2) 95.22%);
+        border-radius: 20px;
+
+        &::before {
+            content: '';
+            border-radius: inherit;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            left: 2px;
+
+            background-size: 100% 100%;
+            background-position: center;
+        }
+
+        &::after {
+            content: '';
+            border-radius: inherit;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        &-button {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 90px;
+            height: 90px;
+
+            background: #FFFFFF;
+            border-radius: 35px;
+
+            svg {
+                fill: var(--gr-color-1);
+                transition: fill 0.3s;
+            }
+
+            &:hover {
+                svg {
+                    fill: var(--gr-color-3);
+                }
+            }
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            left: 2px;
+            z-index: 2;
+        }
+    }
+
+    &__check-list {
+        display: grid;
+        grid-gap: 10px;
+        list-style-type: none;
+        counter-reset: num;
+
+        li {
+            background-color: white;
+            border-radius: 10px;
+
+            position: relative;
+            padding: 20px;
+            min-height: 150px;
+
+            &::before {
+                content: counter(num);
+                counter-increment: num;
+                display: block;
+                margin-bottom: 10px;
+                color: @grColor1;
+                font-size: 1.25rem;
+            }
+
+            font-size: 0.8rem;
+            line-height: 1.2em;
+            color: @mainColor;
+        }
+
+        @media(max-width: @tabletBreakpoint) {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+}
+
+#valeriy-razgulyaev {
+    .video__player {
+        &::before {
+            background-image: url(../../img/video-previews/razgulyaev-preview.jpg);
+        }
+    }
+
+    .video__check-list {
+        grid-template-columns: repeat(3, 1fr);        
+    }
+
+}
+
+#viktorya-domaeva {
+    .video__player {
+        &::before {
+            background-image: url(../../img/video-previews/domaeva-preview.jpg);
+        }
+    }
+
+    .video__check-list {
+        @media(min-width: (@tabletBreakpoint + 1)) {
+            li:nth-child(1n) {
+                grid-area: th1;
+            }
+
+            li:nth-child(2n) {
+                grid-area: th2;
+            }
+
+            li:nth-child(3n) {
+                grid-area: th3;
+            }
+
+            li:nth-child(4n) {
+                grid-area: tw1;
+            }
+
+            li:nth-child(5n) {
+                grid-area: tw2;
+            }
+
+            grid-template-areas: "th1 th1 th2 th2 th3 th3"
+            "tw1 tw1 tw1 tw2 tw2 tw2"
+            ;
+        }                
+    }
+}
+
+#sergey-filinovich{
+    .video__player{
+        &::before {
+            background-image: url(../../img/video-previews/filonovich-preview.jpg);
+        }              
+    }  
+
+    .video__check-list {
+        grid-template-columns: repeat(2, 1fr);        
+    }
+}
+
+#vladislav-zavadskiy{
+    .video__player{
+        &::before {
+            background-image: url(../../img/video-previews/zavadskiy-preview.jpg);
+        }              
+    }  
+
+    .video__check-list {
+        grid-template-columns: repeat(3, 1fr);        
+    }
+}

@@ -1,0 +1,51 @@
+// out: "../css/style.css", compress: false, sourceMap: false
+html{
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        width: 15px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 100px;
+        background-color: rgba(218,218,218,.8);
+        &:hover{
+            background-color: @grColor2;
+        }
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 100px;
+        background-color: transparent;
+    }
+}
+body{
+    background-color: #F2F2F2;
+    min-width: 320px; 
+    color: @mainColor;   
+}    
+    
+a{
+    text-decoration: underline;   
+    *{        
+        transition: all 0.15s;
+    }
+    &:hover{
+        color: @grColor2;
+        text-decoration: underline;
+    }
+}
+
+section{
+    margin-top: 20px;    
+}
+
+@import "components/vars.less";
+@import "components/mixins.less";
+@import "components/utilities.less";
+@import "components/header.less";
+@import "components/menu.less";
+@import "components/heading.less";
+@import "components/blocks.less";
+@import "components/video.less";
+
+
+    
